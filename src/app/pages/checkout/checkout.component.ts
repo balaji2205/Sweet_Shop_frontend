@@ -120,6 +120,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class CheckoutComponent {
 
+  customerName = '';
   phone = '91';
   loading = false;
   orderSuccess = false;
@@ -131,6 +132,13 @@ export class CheckoutComponent {
   ) {}
 
   placeOrder(type: 'PAY_NOW' | 'PAY_LATER') {
+
+    if (!this.customerName || !this.customerName.trim()) {
+      alert('Please enter your name');
+      return;
+    }
+
+
     if (this.loading || this.cart.getItems().length === 0) return;
 
     this.loading = true;
@@ -143,6 +151,7 @@ export class CheckoutComponent {
 
     this.api.placeOrder({
       items,
+      customerName: this.customerName,
       customerPhone: this.phone
     }).subscribe({
       next: res => {
