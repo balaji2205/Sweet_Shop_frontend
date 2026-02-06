@@ -50,4 +50,21 @@ export class OwnerDashboardComponent implements OnInit {
       this.loadProducts();
     });
   }
+
+
+  deleteProduct(id: string) {
+  if (!confirm('Are you sure you want to delete this product?')) {
+    return;
+  }
+
+  this.api.deleteProduct(id).subscribe({
+    next: () => {
+      this.products = this.products.filter(p => p._id !== id);
+    },
+    error: () => {
+      alert('Failed to delete product');
+    }
+  });
+}
+
 }

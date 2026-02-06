@@ -29,9 +29,14 @@
 
   <div class="grid">
     <div class="product-card" *ngFor="let p of products">
-      <h4>{{ p.name }}</h4>
-      <span class="category">{{ p.category }}</span>
-      <p>₹ {{ p.pricePerKg }} / kg</p>
-    </div>
+  <h4>{{ p.name }}</h4>
+  <span class="category">{{ p.category }}</span>
+  <p>₹ {{ p.pricePerKg }} / kg</p>
+
+  <button class="delete-btn" (click)="deleteProduct(p._id)">
+    🗑 Delete
+  </button>
+</div>
+
   </div>
 </div>

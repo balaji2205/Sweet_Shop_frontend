@@ -51,6 +51,12 @@ export class ApiService {
     return this.http.post<any>( `${this.BASE_URL}/api/products`, data);
   }
 
+  deleteProduct(id: string) {
+  return this.http.delete(
+    `${this.BASE_URL}/api/products/${id}`
+  );
+}
+
 
   placeOrder(data: any) {
     return this.http.post<any>(`${this.BASE_URL}/api/orders`, data);
