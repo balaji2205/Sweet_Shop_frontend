@@ -75,3 +75,39 @@ input {
   color: #4caf50;
   font-size: 16px;
 }
+
+
+
+
+
+
+
+
+
+
+.whatsapp-info {
+  background: #f1f8f4;
+  border: 1px dashed #4caf50;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.whatsapp-info h4 {
+  margin: 0 0 6px;
+  color: #2e7d32;
+}
+
+.join-box {
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 6px 0;
+  display: inline-block;
+  font-family: monospace;
+}
+
+.whatsapp-info .note {
+  font-size: 13px;
+  color: #555;
+}
