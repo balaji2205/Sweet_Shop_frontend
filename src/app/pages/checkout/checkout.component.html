@@ -65,31 +65,42 @@
     />
 
     <!-- 🟢 PAY NOW -->
-    <div class="pay-now">
-      <h3>Pay Now (UPI)</h3>
+    <!-- 🟢 PAY NOW -->
+<div class="pay-now">
+  <h3>Pay Now (UPI)</h3>
 
-      <!-- ✅ CORRECT QR PATH -->
-      <img
-        src="/owner-qr.png"
-        alt="UPI QR Code"
-        class="qr-img"
-      />
+  <!-- ✅ QR IMAGE (keep as is) -->
+  <img
+    src="/owner-qr.png"
+    alt="UPI QR Code"
+    class="qr-img"
+  />
 
-      <p class="note">
-        Pay using any UPI app.  
-        Please show the payment screenshot during pickup.
-      </p>
+  <!-- 🔵 NEW: OPEN UPI APP BUTTON -->
+  <a
+    class="upi-btn"
+    [href]="upiLink"
+  >
+    📲 Pay using UPI App (GPay / PhonePe)
+  </a>
 
-      <button
-  type="button"
-  class="primary-btn"
-  [disabled]="loading"
-  (click)="placeOrder('PAY_NOW')"
->
-  {{ loading ? 'Processing…' : 'I Have Paid' }}
-</button>
+  <p class="note">
+    You can either scan the QR or tap the button above to open your UPI app.
+  </p>
 
-    </div>
+  <p class="note warning">
+    ⚠️ After payment, click <b>I Have Paid</b> and show the screenshot during pickup.
+  </p>
+
+  <button
+    type="button"
+    class="primary-btn"
+    [disabled]="loading"
+    (click)="placeOrder('PAY_NOW')"
+  >
+    {{ loading ? 'Processing…' : 'I Have Paid' }}
+  </button>
+</div>
 
     <hr />
 

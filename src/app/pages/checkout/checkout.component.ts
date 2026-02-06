@@ -125,6 +125,8 @@ export class CheckoutComponent {
   loading = false;
   orderSuccess = false;
   paymentType: 'PAY_NOW' | 'PAY_LATER' | null = null;
+  upiLink = 'upi://pay?pa=balajiv0504@okaxis@okaxis&pn=Sweet%20Shop&cu=INR';
+
 
   constructor(
     private cart: CartService,
@@ -176,4 +178,18 @@ export class CheckoutComponent {
       }
     });
   }
+
+
+  upiId = 'balaji@okaxis'; // 🔴 replace with YOUR UPI ID
+merchantName = 'Sweet Shop';
+
+getUpiLink() {
+  const amount = this.cart.getTotal().toFixed(0); // total amount
+  const note = encodeURIComponent('Sweet Shop Order');
+
+  return `upi://pay?pa=${this.upiId}&pn=${encodeURIComponent(
+    this.merchantName
+  )}&am=${amount}&cu=INR&tn=${note}`;
+}
+
 }
