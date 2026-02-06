@@ -1,0 +1,77 @@
+.page {
+  max-width: 420px;
+  margin: auto;
+  padding: 16px;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin: 8px 0 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  background: #4caf50;
+  color: white;
+}
+
+.primary-btn:disabled {
+  background: #9ccc9c;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #777;
+  text-align: center;
+}
+
+/* ✅ SUCCESS CARD */
+.success-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.success-card h2 {
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+.success-card p {
+  margin: 6px 0;
+  color: #555;
+}
+
+
+.pay-now img {
+  width: 200px;
+  display: block;
+  margin: 12px auto;
+}
+
+.secondary-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid #4caf50;
+  background: white;
+  color: #4caf50;
+  font-size: 16px;
+}

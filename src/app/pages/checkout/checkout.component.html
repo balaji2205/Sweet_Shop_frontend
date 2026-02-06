@@ -1,0 +1,71 @@
+<div class="page">
+
+  <!-- ✅ SUCCESS STATE -->
+  <div *ngIf="orderSuccess" class="success-card">
+    <h2>🎉 Order Placed Successfully</h2>
+
+    <p>
+      Thank you for your order!  
+      You will receive WhatsApp updates when your order is ready.
+    </p>
+
+    <!-- Extra info only if Pay Now -->
+    <p *ngIf="paymentType === 'PAY_NOW'" class="warning">
+      ⚠️ Please show your payment screenshot to the owner while collecting the order.
+    </p>
+  </div>
+
+  <!-- 🧾 CHECKOUT FORM -->
+  <div *ngIf="!orderSuccess">
+    <h2>📦 Checkout</h2>
+
+    <label>Phone Number</label>
+    <input
+      type="tel"
+      maxlength="14"
+      [(ngModel)]="phone"
+      placeholder="91XXXXXXXXXX"
+    />
+
+    <!-- 🟢 PAY NOW -->
+    <div class="pay-now">
+      <h3>Pay Now (UPI)</h3>
+
+      <!-- ✅ CORRECT QR PATH -->
+      <img
+        src="/owner-qr.png"
+        alt="UPI QR Code"
+        class="qr-img"
+      />
+
+      <p class="note">
+        Pay using any UPI app.  
+        Please show the payment screenshot during pickup.
+      </p>
+
+      <button
+  type="button"
+  class="primary-btn"
+  [disabled]="loading"
+  (click)="placeOrder('PAY_NOW')"
+>
+  {{ loading ? 'Processing…' : 'I Have Paid' }}
+</button>
+
+    </div>
+
+    <hr />
+
+    <!-- 🟡 PAY LATER -->
+    <button
+  type="button"
+  class="secondary-btn"
+  [disabled]="loading"
+  (click)="placeOrder('PAY_LATER')"
+>
+  Pay at Shop
+</button>
+
+  </div>
+
+</div>

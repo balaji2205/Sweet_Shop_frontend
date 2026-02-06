@@ -1,0 +1,37 @@
+<div class="page">
+  <h2>🧑‍🍳 Owner Dashboard</h2>
+
+  <!-- Add Product Card -->
+  <div class="add-card">
+    <h3>Add New Product</h3>
+
+    <input
+      placeholder="Product name"
+      [(ngModel)]="newProduct.name"
+    />
+
+    <select [(ngModel)]="newProduct.category">
+      <option value="Sweet">Sweet</option>
+      <option value="Savory">Savory</option>
+    </select>
+
+    <input
+      type="number"
+      placeholder="Price per kg"
+      [(ngModel)]="newProduct.pricePerKg"
+    />
+
+    <button (click)="addProduct()">Add Product</button>
+  </div>
+
+  <!-- Product List -->
+  <h3 class="section">Your Products</h3>
+
+  <div class="grid">
+    <div class="product-card" *ngFor="let p of products">
+      <h4>{{ p.name }}</h4>
+      <span class="category">{{ p.category }}</span>
+      <p>₹ {{ p.pricePerKg }} / kg</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #222;
+}
+
+h2 {
+  margin: 0 0 12px;
+}
+
+button {
+  cursor: pointer;
+}

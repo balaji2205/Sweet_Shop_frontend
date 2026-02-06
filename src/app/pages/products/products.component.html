@@ -1,0 +1,47 @@
+<div class="layout">
+
+  <!-- PRODUCTS LIST -->
+  <div class="products">
+    <h2>🍬 Sweets & Savories</h2>
+
+    <div class="product-card" *ngFor="let p of products">
+      <div class="product-header">
+        <h3>{{ p.name }}</h3>
+        <span>₹{{ p.pricePerKg }} / kg</span>
+      </div>
+
+      <div class="product-actions">
+        <input
+          type="number"
+          min="100"
+          step="100"
+          placeholder="Grams"
+          [(ngModel)]="p.qty"
+        />
+        <button (click)="addToCart(p)">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART PANEL -->
+  <div class="cart" *ngIf="cart.getItems().length > 0">
+    <h3>🛒 Your Cart</h3>
+
+    <div class="cart-item" *ngFor="let item of cart.getItems()">
+      <div>
+        <strong>{{ item.name }}</strong>
+        <p>{{ item.quantityInGrams }} g</p>
+      </div>
+      <span>₹{{ item.price | number:'1.0-0' }}</span>
+    </div>
+
+    <div class="cart-total">
+      Total: ₹{{ getTotal() | number:'1.0-0' }}
+    </div>
+
+    <button class="checkout-btn" (click)="checkout()">
+      Proceed to Checkout
+    </button>
+  </div>
+
+</div>
