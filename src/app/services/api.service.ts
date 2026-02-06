@@ -84,6 +84,13 @@ updateOrderStatus(orderId: string, status: string) {
 }
 
 
+deleteOrder(orderId: string) {
+  return this.http.delete(
+    `${this.BASE_URL}/api/orders/${orderId}`
+  );
+}
+
+
 ownerLogin(data: { username: string; password: string }) {
   return this.http.post<any>(
     `${this.BASE_URL}/api/auth/login`,

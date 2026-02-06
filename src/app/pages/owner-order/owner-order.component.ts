@@ -31,4 +31,20 @@ export class OwnerOrderComponent {
       this.loadOrders();
     });
   }
+
+
+  deleteOrder(orderId: string) {
+  if (!confirm('Delete this order permanently?')) return;
+
+  this.api.deleteOrder(orderId).subscribe({
+    next: () => {
+      // Remove from UI immediately
+      this.orders = this.orders.filter(o => o._id !== orderId);
+    },
+    error: err => {
+      alert(err.error?.message || 'Failed to delete order');
+    }
+  });
+}
+
 }

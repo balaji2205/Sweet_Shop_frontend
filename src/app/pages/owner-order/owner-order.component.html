@@ -42,6 +42,11 @@
       >
         Collected
       </button>
+      <!-- DELETE BUTTON (only if COLLECTED) -->
+<button *ngIf="order.status === 'COLLECTED'" class="delete-btn" (click)="deleteOrder(order._id)">
+    🗑 Delete
+</button>
+
     </div>
 
   </div>
