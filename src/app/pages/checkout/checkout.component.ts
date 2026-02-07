@@ -125,7 +125,7 @@ export class CheckoutComponent {
   loading = false;
   orderSuccess = false;
   paymentType: 'PAY_NOW' | 'PAY_LATER' | null = null;
-  upiLink = 'upi://pay?pa=balajiv0504@okaxis@okaxis&pn=Sweet%20Shop&cu=INR';
+  upiLink = 'upi://pay?pa=balajiv0504@okaxis&pn=Sweet%20Shop&cu=INR';
 
 
   constructor(
